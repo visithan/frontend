@@ -1,5 +1,7 @@
 import React from "react";
 import Layout from "./components/Layout/layout";
+import Getuser from './components/User/getuser';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
@@ -14,7 +16,7 @@ const App = () => {
           </Route>
           <Route exact path="/adduser">
             <div>
-              <h1>Welcome to add User</h1>
+              <Getuser/>
             </div>
           </Route>
           <Route exact path="/edituser">
