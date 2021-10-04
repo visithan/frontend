@@ -1,0 +1,31 @@
+import React from "react";
+import Layout from "./components/Layout/layout";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+const App = () => {
+  return (
+    <Layout>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <div>
+              <h1>Welcome to home</h1>
+            </div>
+          </Route>
+          <Route exact path="/adduser">
+            <div>
+              <h1>Welcome to add User</h1>
+            </div>
+          </Route>
+          <Route exact path="/edituser">
+            <div>
+              <h1>Welcome to Edit User</h1>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+    </Layout>
+  );
+};
+
+export default App;
