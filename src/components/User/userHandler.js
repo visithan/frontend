@@ -1,13 +1,18 @@
 //import React from 'react';
-import axios from 'axios';
+import axios from "axios";
 
-export const getData = () => {
-    axios.get("server_pages/viewall.php").then((response) => {
-        this.setState({ datas: response.data.students });
-        //console.log(this.state.datas);
-    }).catch((e) => {
+const userHandler = () => {
+  const getData = () => {
+    axios
+      .get("http://localhost:3030/users")
+      .then((response) => {
+        return response.data;
+        //this.setState({ datas: response.data.students });
+        //console.log(response);
+      })
+      .catch((e) => {
         console.error(e);
-    });
+      });
 
     /*$.ajax({
         url: 'server_pages/viewall.php',
@@ -39,30 +44,42 @@ export const getData = () => {
         console.error(error);
         }
     )*/
-};
+  };
 
-export const insertData = (formData) => {
-    axios.post("server_pages/insert.php", formData).then((response) => {
+  const insertData = (formData) => {
+    axios
+      .post("server_pages/insert.php", formData)
+      .then((response) => {
         this.getData();
-    }).catch((error) => {
+      })
+      .catch((error) => {
         console.error(error);
-    });
-};
+      });
+  };
 
-export const editData = (formData) => {
-    axios.post("server_pages/edit.php", formData).then((response) => {
+  const editData = (formData) => {
+    axios
+      .post("server_pages/edit.php", formData)
+      .then((response) => {
         //console.error(response);
         this.getData();
-    }).catch((error) => {
+      })
+      .catch((error) => {
         console.error(error);
-    });
-};
+      });
+  };
 
-export const deleteData = (formData) => {
-    axios.post("server_pages/delete.php", formData).then((response) => {
+  const deleteData = (formData) => {
+    axios
+      .post("server_pages/delete.php", formData)
+      .then((response) => {
         //console.error(response);
         this.getData();
-    }).catch((error) => {
+      })
+      .catch((error) => {
         console.error(error);
-    });
+      });
+  };
 };
+
+export default userHandler;

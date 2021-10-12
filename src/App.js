@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "./components/Layout/layout";
-import Getuser from './components/User/getuser';
+import Getuser from "./components/User/getuser";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -14,12 +14,8 @@ const App = () => {
               <h1>Welcome to home</h1>
             </div>
           </Route>
-          <Route exact path="/adduser">
-            <div>
-              <Getuser/>
-            </div>
-          </Route>
-          <Route exact path="/edituser">
+          <Route path="/adduser" component={Getuser}></Route>
+          <Route path="/edituser">
             <div>
               <h1>Welcome to Edit User</h1>
             </div>
