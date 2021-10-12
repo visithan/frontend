@@ -5,4 +5,4 @@ class userDataService {
     return http.get("/users");
   }
 }
-export default userDataService;
+export default new userDataService();

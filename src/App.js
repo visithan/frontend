@@ -14,7 +14,7 @@ const App = () => {
               <h1>Welcome to home</h1>
             </div>
           </Route>
-          <Route path="/adduser" component={Getuser}></Route>
+          <Route path="/viewall" component={Getuser}></Route>
           <Route path="/edituser">
             <div>
               <h1>Welcome to Edit User</h1>

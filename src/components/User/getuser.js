@@ -1,15 +1,14 @@
-import React, { useState } from "react";
-import userDataService from "./userServices";
+import React, { useState, useEffect } from "react";
+import UserDataService from "./userServices";
 
 //import userHandler from "./userHandler";
 
 //const { getData, insertData } = userHandler;
-const getuser = () => {
+const Getuser = () => {
   const [userdata, setUserData] = useState();
 
   const getUsers = () => {
-    userDataService
-      .getAllUsers()
+    UserDataService.getAllUsers()
       .then((users) => {
         setUserData(users.data);
         console.log(userdata);
@@ -19,14 +18,15 @@ const getuser = () => {
       });
   };
   useEffect(() => {
-    getUsers();
+    //getUsers();
   });
 
   return (
     <div>
       <h1>Hi User Welcome</h1>
+      <button onClick={getUsers()}>All Users</button>
     </div>
   );
 };
 
-export default getuser;
+export default Getuser;
